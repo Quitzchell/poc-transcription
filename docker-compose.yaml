@@ -1,0 +1,12 @@
+services:
+  transcription:
+    build: .
+    container_name: transcription-cli
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      - SYMFONY_ENV=dev
+    ports:
+      - "8080:80"
+    command: ["bash"]
