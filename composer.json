@@ -1,10 +1,15 @@
 {
   "require": {
-    "symfony/console": "^7.1"
+    "symfony/console": "^7.1",
+    "symfony/filesystem": "^7.1",
+    "ext-simplexml": "*"
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src/"
+      "App\\": "src/",
+      "Actions\\": "src/Actions",
+      "Command\\": "src/Command",
+      "Enums\\": "src/Enums/"
     }
   }
 }

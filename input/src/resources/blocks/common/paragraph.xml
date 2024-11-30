@@ -1,0 +1,5 @@
+<template name="Paragraph">
+    <field type="text" name="title" title="Title"/>
+    <field type="html" name="text" title="Text" height="40"
+           toolbar="formatselect | bold italic underline | charmap | link"/>
+</template>
