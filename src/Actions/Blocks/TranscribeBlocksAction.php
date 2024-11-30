@@ -1,10 +1,10 @@
 <?php
 
-namespace Actions\Blocks;
+namespace App\Actions\Blocks;
 
-use Actions\FormFields\TranscribeRichTextFormFieldAction;
-use Actions\FormFields\TranscribeTextFormFieldAction;
-use Enums\FormFieldTypes;
+use App\Enums\FormFieldTypes;
+use App\Services\FormFieldParsing\RichTextFormFieldGenerator;
+use App\Services\FormFieldParsing\TextFormFieldGenerator;
 use RecursiveIteratorIterator;
 use SimpleXMLElement;
 
@@ -129,9 +129,9 @@ class TranscribeBlocksAction
         foreach ($block->children() as $attributes) {
             $formFieldGenerators[] = match ((string)$attributes['type']) {
                 FormFieldTypes::TextField->value =>
-                new TranscribeTextFormFieldAction($attributes),
+                new TextFormFieldGenerator($attributes),
                 FormFieldTypes::RichTextField->value =>
-                new TranscribeRichTextFormFieldAction($attributes),
+                new RichTextFormFieldGenerator($attributes),
                 default => throw new \Exception('Unexpected match value'),
             };
         }

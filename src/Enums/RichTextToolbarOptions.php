@@ -1,6 +1,6 @@
 <?php
 
-namespace Enums;
+namespace App\Enums;
 
 enum RichTextToolbarOptions: string
 {

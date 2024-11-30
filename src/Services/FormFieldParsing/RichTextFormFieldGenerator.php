@@ -1,20 +1,24 @@
 <?php
 
-namespace Actions\FormFields;
+namespace App\Services\FormFieldParsing;
 
-use Actions\FormFields\Abstracts\FormFieldGenerator;
-use Enums\RichTextToolbarOptions;
+use App\Services\FormFieldParsing\Abstracts\FormFieldGenerator;
+use App\Enums\RichTextToolbarOptions;
 use SimpleXMLElement;
 
-class TranscribeRichTextFormFieldAction extends FormFieldGenerator
+class RichTextFormFieldGenerator extends FormFieldGenerator
 {
-    public function formFieldToArray(): array
+    public function generateUseStatement(): array
     {
-        $toolbarButtons = implode(", ", array_map(function ($item) {
+        return ["use Filament\Forms\Components\RichEditor;"];
+    }
+
+    public function generateBlockSchema(): array
+    {
+        $toolbarButtons = implode(",\n", array_map(function ($item) {
             return "'{$item}'"; // Add quotes around each item
         }, $this->attributes['toolbarButtons']));
 
-        // Return the formatted string
         return [
             "RichEditor::make('{$this->attributes['name']}')",
             "->label('{$this->attributes['label']}')",
@@ -24,9 +28,9 @@ class TranscribeRichTextFormFieldAction extends FormFieldGenerator
         ];
     }
 
-    public function prepareAttributes(SimpleXMLElement $attributes): array
+    public function extractAttributes(SimpleXMLElement $attributes): array
     {
-        $default = parent::prepareAttributes($attributes);
+        $default = parent::extractAttributes($attributes);
         if ($attributes['toolbar']) {
             $toolbarAttributes = $this->mapToolbarAttributes($attributes['toolbar']);
         }

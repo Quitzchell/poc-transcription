@@ -1,15 +1,18 @@
 {
   "require": {
-    "symfony/console": "^7.1",
+    "symfony/console": "^7.2",
     "symfony/filesystem": "^7.1",
-    "ext-simplexml": "*"
+    "ext-simplexml": "*",
+    "ext-xml": "*",
+    "symfony/dependency-injection": "^7.2",
+    "symfony/dotenv": "^7.2",
+    "symfony/config": "^7.2",
+    "symfony/yaml": "^7.2"
   },
   "autoload": {
     "psr-4": {
       "App\\": "src/",
-      "Actions\\": "src/Actions",
-      "Command\\": "src/Command",
-      "Enums\\": "src/Enums/"
+      "Config\\": "config/"
     }
   }
 }
