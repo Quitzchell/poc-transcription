@@ -23,7 +23,7 @@ class FileProcessor
         return $this->outputDir;
     }
 
-    public function validateDirectory(string $path): void
+    public function validateDirectory(string $path): bool
     {
         if (!is_dir($path)) {
             throw new \InvalidArgumentException("The directory '$path' does not exist.");
@@ -31,6 +31,8 @@ class FileProcessor
         if (!is_readable($path)) {
             throw new \InvalidArgumentException("The directory '$path' is not readable.");
         }
+
+        return true;
     }
 
     public function getXmlFiles(): array
