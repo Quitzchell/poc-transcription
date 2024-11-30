@@ -3,10 +3,12 @@
 namespace App\Services\FormFieldParsing;
 
 use App\Enums\FormFieldTypes;
-use App\Services\FormFieldParsing\Abstracts\FormFieldGenerator;
 use App\Services\FormFieldParsing\DTO\FormFieldDTO;
-use SimpleXMLElement;
+use App\Services\FormFieldParsing\Utilities\Abstracts\FormFieldGenerator;
+use App\Services\FormFieldParsing\Utilities\RichTextFormFieldGenerator;
+use App\Services\FormFieldParsing\Utilities\TextFormFieldGenerator;
 use Exception;
+use SimpleXMLElement;
 
 class FormFieldTranscriptionService
 {

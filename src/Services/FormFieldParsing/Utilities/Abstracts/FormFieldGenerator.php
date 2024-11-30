@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\FormFieldParsing\Abstracts;
+namespace App\Services\FormFieldParsing\Utilities\Abstracts;
 
 use SimpleXMLElement;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\FormFieldParsing;
+namespace App\Services\FormFieldParsing\Utilities;
 
-use App\Services\FormFieldParsing\Abstracts\FormFieldGenerator;
+use App\Services\FormFieldParsing\Utilities\Abstracts\FormFieldGenerator;
 use SimpleXMLElement;
 
 class TextFormFieldGenerator extends FormFieldGenerator

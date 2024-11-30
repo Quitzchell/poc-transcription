@@ -3,6 +3,9 @@
 namespace App\Services\BlockParsing;
 
 use App\Services\BlockParsing\DTO\BlockDTO;
+use App\Services\BlockParsing\Utilities\ClassGenerator;
+use App\Services\BlockParsing\Utilities\FileProcessor;
+use App\Services\BlockParsing\Utilities\XmlParser;
 use App\Services\FormFieldParsing\FormFieldTranscriptionService;
 
 class BlockTranscriptionService

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\BlockParsing;
+namespace App\Services\BlockParsing\Utilities;
 
 use App\Services\BlockParsing\DTO\BlockDTO;
 
