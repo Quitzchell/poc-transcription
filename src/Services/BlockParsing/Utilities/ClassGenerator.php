@@ -52,7 +52,7 @@ class ClassGenerator
         file_put_contents($outputPath, $classCode);
     }
 
-    private function generateBlockNameSpace(string $blockName): string
+    public function generateBlockNameSpace(string $blockName): string
     {
         $parts = explode('/', $blockName);
         array_pop($parts);

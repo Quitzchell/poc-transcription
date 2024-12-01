@@ -1,0 +1,23 @@
+<?php
+namespace App\Cms\Blocks\Example;
+use App\Cms\Blocks\Interfaces\HasBlockSchema;
+use Filament\Forms\Components\Builder\Block;
+use App\Cms\Blocks\BaseBlock;
+class ExampleBlock implements HasBlockSchema
+{
+public static function getBlock(): Block
+{
+return Block::make('example/block')
+->label('ExampleBlock')
+->schema([
+TextInput::make('title')
+->label('Title')
+]);
+}
+public static function resolve(array $blockData): array
+{
+return [
+'title' => $blockData['title']
+];
+}
+}
