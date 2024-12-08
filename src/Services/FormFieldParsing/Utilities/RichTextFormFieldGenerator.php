@@ -16,7 +16,7 @@ class RichTextFormFieldGenerator extends FormFieldGenerator
     public function generateBlockSchema(): array
     {
         $toolbarButtons = implode(",\n", array_map(function ($item) {
-            return "'{$item}'"; // Add quotes around each item
+            return "'{$item}'";
         }, $this->attributes['toolbarButtons']));
 
         return [
